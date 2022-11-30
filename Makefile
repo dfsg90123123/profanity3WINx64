@@ -10,7 +10,7 @@ ifeq ($(UNAME_S),Darwin)
 	CFLAGS=-c -std=c++11 -Wall -mmmx -O2
 else
 	LDFLAGS=-s -lOpenCL -mcmodel=large
-	CFLAGS=-c -std=c++11 -Wall -mmmx -O2 -mcmodel=large 
+	CFLAGS=-c -std=c++11 -Wall -mmmx -O2 -mcmodel=large -DCL_TARGET_OPENCL_VERSION=300
 endif
 
 all: $(SOURCES) $(EXECUTABLE)
