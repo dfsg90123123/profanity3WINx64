@@ -12,6 +12,7 @@
 enum HashTarget {
 	ADDRESS,
 	CONTRACT,
+	PRIVATE_KEY,
 	HASH_TARGET_COUNT
 };
 
@@ -31,6 +32,7 @@ class Mode {
 		static Mode letters();
 		static Mode numbers();
 		static Mode doubles();
+		static Mode crack();
 
 		std::string name;
 

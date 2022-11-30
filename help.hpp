@@ -17,6 +17,7 @@ usage: ./profanity3 [OPTIONS]
     --numbers               Score on numbers anywhere in hash.
     --mirror                Score on mirroring from center.
     --leading-doubles       Score on hashes leading with hexadecimal pairs
+    --crack                 Try to find the private key of a profanity1 key.
 
   Modes with arguments:
     --leading <single hex>  Score on hashes leading with given hex character.

@@ -102,6 +102,8 @@ std::string Mode::transformKernel() const {
 			return "";
 		case CONTRACT:
 			return "profanity_transform_contract";
+		case PRIVATE_KEY:
+			return "";
 		default:
 			throw "No kernel for target";
 	}
@@ -113,6 +115,8 @@ std::string Mode::transformName() const {
 			return "Address";
 		case CONTRACT:
 			return "Contract";
+		case PRIVATE_KEY:
+			return "Private Key";
 		default:
 			throw "No name for target";
 	}
@@ -138,5 +142,12 @@ Mode Mode::doubles() {
 	Mode r;
 	r.name = "doubles";
 	r.kernel = "profanity_score_doubles";
+	return r;
+}
+
+Mode Mode::crack() {
+	Mode r;
+	r.name = "crack";
+	r.kernel = "profanity_score_crack";
 	return r;
 }

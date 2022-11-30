@@ -163,6 +163,7 @@ int main(int argc, char * * argv) {
 		bool bModeRange = false;
 		bool bModeMirror = false;
 		bool bModeDoubles = false;
+		bool bModeCrack = false;
 		int rangeMin = 0;
 		int rangeMax = 0;
 		std::vector<size_t> vDeviceSkipIndex;
@@ -184,6 +185,7 @@ int main(int argc, char * * argv) {
 		argp.addSwitch('7', "range", bModeRange);
 		argp.addSwitch('8', "mirror", bModeMirror);
 		argp.addSwitch('9', "leading-doubles", bModeDoubles);
+		argp.addSwitch('k', "crack", bModeCrack);
 		argp.addSwitch('m', "min", rangeMin);
 		argp.addSwitch('M', "max", rangeMax);
 		argp.addMultiSwitch('s', "skip", vDeviceSkipIndex);
@@ -226,13 +228,15 @@ int main(int argc, char * * argv) {
 			mode = Mode::mirror();
 		} else if (bModeDoubles) {
 			mode = Mode::doubles();
+		} else if (bModeCrack) {
+			mode = Mode::crack();
 		} else {
 			std::cout << g_strHelp << std::endl;
 			return 0;
 		}
 		
 		if (strPublicKey.length() == 0) {
-			std::cout << "error: this tool requires your public key to derive it's private key security" << std::endl;
+			std::cout << "error: this tool requires a public key to derive it's private key" << std::endl;
 			return 1;
 		}
 
@@ -245,6 +249,8 @@ int main(int argc, char * * argv) {
 
 		if (bMineContract) {
 			mode.target = CONTRACT;
+		} else if (bModeCrack) {
+			mode.target = PRIVATE_KEY;
 		} else {
 			mode.target = ADDRESS;
 		}
