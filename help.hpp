@@ -4,11 +4,11 @@
 #include <string>
 
 const std::string g_strHelp = R"(
-usage: ./profanity2 [OPTIONS]
+usage: ./profanity3 [OPTIONS]
 
   Mandatory args:
     -z                      Seed public key to start, add it's private key
-                            to the "profanity2" resulting private key.
+                            to the "profanity3" resulting private key.
 
   Basic modes:
     --benchmark             Run without any scoring, a benchmark.
@@ -47,22 +47,32 @@ usage: ./profanity2 [OPTIONS]
                             parallell. [default = 16384]
 
   Examples:
-    ./profanity2 --leading f -z HEX_PUBLIC_KEY_128_CHARS_LONG
-    ./profanity2 --matching dead -z HEX_PUBLIC_KEY_128_CHARS_LONG
-    ./profanity2 --matching badXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXbad -z HEX_PUBLIC_KEY_128_CHARS_LONG
-    ./profanity2 --leading-range -m 0 -M 1 -z HEX_PUBLIC_KEY_128_CHARS_LONG
-    ./profanity2 --leading-range -m 10 -M 12 -z HEX_PUBLIC_KEY_128_CHARS_LONG
-    ./profanity2 --range -m 0 -M 1 -z HEX_PUBLIC_KEY_128_CHARS_LONG
-    ./profanity2 --contract --leading 0 -z HEX_PUBLIC_KEY_128_CHARS_LONG
+    ./profanity3 --leading f -z HEX_PUBLIC_KEY_128_CHARS_LONG
+    ./profanity3 --matching dead -z HEX_PUBLIC_KEY_128_CHARS_LONG
+    ./profanity3 --matching badXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXbad -z HEX_PUBLIC_KEY_128_CHARS_LONG
+    ./profanity3 --leading-range -m 0 -M 1 -z HEX_PUBLIC_KEY_128_CHARS_LONG
+    ./profanity3 --leading-range -m 10 -M 12 -z HEX_PUBLIC_KEY_128_CHARS_LONG
+    ./profanity3 --range -m 0 -M 1 -z HEX_PUBLIC_KEY_128_CHARS_LONG
+    ./profanity3 --contract --leading 0 -z HEX_PUBLIC_KEY_128_CHARS_LONG
 
   About:
-    profanity2 is a vanity address generator for Ethereum that utilizes
+    profanity3 is a vanity address generator for Ethereum that utilizes
     computing power from GPUs using OpenCL.
+
+  Forked "profanity3":
+    Author: Rodrigo Madera <madera@acm.org>
+    Disclaimer:
+      This project "profanity3" was forked from the profanity2 project and
+      modified to allow you to assess the quality of your profanity1 keys.
+      No guarantees whatsoever are given, so use this at your own risk and
+      don't bother me about it. Also, don't be evil. Use this to assess
+      your own addresses and keep them safe. But better yet, if you have
+      any wallets generated with profanity1, just throw them away.
 
   Forked "profanity2":
     Author: 1inch Network <info@1inch.io>
     Disclaimer:
-      This project "profanity2" was forked from the original project and
+      The project "profanity2" was forked from the original project and
       modified to guarantee "SAFETY BY DESIGN". This means source code of
       this project doesn't require any audits, but still guarantee safe usage.
 
