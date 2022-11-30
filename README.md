@@ -1,20 +1,22 @@
 # profanity3
 
-Profanity is a high performance (probably the fastest!) vanity address generator for Ethereum. Create cool customized addresses that you never realized you needed! Recieve Ether in style! Wow!
+Profanity is a high performance (probably the fastest!) vanity address generator for Ethereum. Create cool customized addresses that you never realized you needed! Receive Ether in style! Wow!
 
-This is a fork of "profanity2", which is a fork of "profanity". Because of extreme criativity, this third fork is called "profanity3".
+This is a fork of "profanity2", which is in turn a fork of the original "profanity".
+
+Because of extreme creativity, this third fork is called "profanity3".
+
+This repo right here, "profanity3", is the same as "profanity2" with just one special feature: it can crack "profanity1" keys.
 
 ![Screenshot](/img/screenshot.png?raw=true "Wow! That's a lot of zeros!")
 
 # Important to know
 
-A previous version of this project (hereby called "profanity1" for context) has a known critical issue due to a bad source of randomness. The issue enables attackers to recover private key from public key: https://blog.1inch.io/a-vulnerability-disclosed-in-profanity-an-ethereum-vanity-address-tool-68ed7455fc8c
+A previous version of this project (hereby called "profanity1" for context) has a known critical issue due to a bad source of randomness. The issue enables attackers to recover the private key given a public key: https://blog.1inch.io/a-vulnerability-disclosed-in-profanity-an-ethereum-vanity-address-tool-68ed7455fc8c
 
-The good guys at 1inch created a follow-up project called "profanity2" which was forked from the original "profanity1" project and modified to guarantee **safety by design**. This means source code of this project do not require any audits, but still guarantee safe usage.
+The good guys at 1inch created a follow-up project called "profanity2" which was forked from the original "profanity1" project and modified to guarantee **safety by design**. They claim that "this means that the source code of this project does not require any audits, but still guarantee safe usage." Kind of a bold statement (if you ask me) although it's pretty much true.
 
-The "profanity2" project is not generating keys anymore, instead it adjusts a user-provided public key until desired vanity address will be discovered. Users provide seed public key in form of 128-symbol hex string with `-z` parameter flag. Resulting private key should be used to be added to seed private key to achieve final private key of the desired vanity address (private keys are just 256-bit numbers). Running "profanity2" can even be outsourced to someone completely unreliable - it is still safe by design.
-
-This repo right here, "profanity3", is the same as profanity2 with just one special feature: it can crack profanity1 keys.
+The "profanity2" project is not generating keys anymore (as opposed to "profanity1"). Instead, it adjusts a user-provided public key until a desired vanity address is discovered. Users provide a seed public key in the form of a 128-symbol hex string with the `-z` parameter flag. The resulting private key should then be added to the seed private key to achieve a final private key with the desired vanity address (remember: private keys are just 256-bit numbers). Running "profanity2" can even be outsourced to someone completely unreliable - it is still safe by design.
 
 ## Getting public key for mandatory `-z` parameter
 
@@ -105,8 +107,8 @@ usage: ./profanity3 [OPTIONS]
   Forked "profanity3":
     Author: Rodrigo Madera <madera@acm.org>
     Disclaimer:
-      This project "profanity3" was forked from the profanity2 project and
-      modified to allow you to assess the quality of your profanity1 keys.
+      This project "profanity3" was forked from the "profanity2" project and
+      modified to allow you to assess the quality of your "profanity1" keys.
       No guarantees whatsoever are given, so use this at your own risk and
       don't bother me about it. Also, don't be evil. Use this to assess
       your own addresses and keep them safe. But better yet, if you have
