@@ -118,10 +118,10 @@ std::vector<std::string> getBinaries(cl_program & clProgram) {
 
 unsigned int getUniqueDeviceIdentifier(const cl_device_id & deviceId) {
 #if defined(CL_DEVICE_TOPOLOGY_AMD)
-	auto topology = clGetWrapper<hwloc_cl_device_topology_amd>(clGetDeviceInfo, deviceId, CL_DEVICE_TOPOLOGY_AMD);
-	if (topology.raw.type == HWLOC_CL_DEVICE_TOPOLOGY_TYPE_PCIE_AMD) {
-		return (topology.pcie.bus << 16) + (topology.pcie.device << 8) + topology.pcie.function;
-	}
+	//auto topology = clGetWrapper<hwloc_cl_device_topology_amd>(clGetDeviceInfo, deviceId, CL_DEVICE_TOPOLOGY_AMD);
+	//if (topology.raw.type == HWLOC_CL_DEVICE_TOPOLOGY_TYPE_PCIE_AMD) {
+	//	return (topology.pcie.bus << 16) + (topology.pcie.device << 8) + topology.pcie.function;
+	//}
 #endif
 	cl_int bus_id = clGetWrapper<cl_int>(clGetDeviceInfo, deviceId, CL_DEVICE_PCI_BUS_ID_NV);
 	cl_int slot_id = clGetWrapper<cl_int>(clGetDeviceInfo, deviceId, CL_DEVICE_PCI_SLOT_ID_NV);

@@ -13,7 +13,7 @@
 #if defined(__APPLE__) || defined(__MACOSX)
 #include <machine/endian.h>
 #else
-#include <winsock2.h>
+#include <arpa/inet.h>
 #endif
 
 #include "precomp.hpp"

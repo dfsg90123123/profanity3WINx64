@@ -131,11 +131,33 @@ usage: ./profanity3 [OPTIONS]
       corners to improve overall performance.
 ```
 
+### Compile for Windows
+
+- Install MSYS2
+- Open MSYS2 MINIGW64 shell
+- ```pacman -S mingw-w64-x86_64-toolchain mingw-w64-x86_64-opencl-headers```
+- ```pacman -S base-devel gcc vim cmake```
+- cd /C/DOWNLOADS/profanity3-master
+- make
+- profanity2.exe
+
+### Compile for Linux
+
+- sudo apt-get update && sudo apt-get upgrade
+- sudo apt-get install opencl-headers
+- sudo apt-get install ocl-icd-opencl-dev intel-opencl-icd
+- make
+- make clean
+- chmod +x ./profanity.x64
+- ./profanity.x64
+
 ### Benchmarks - Current version
 |Model|Clock Speed|Memory Speed|Modified straps|Speed|Time to match eight characters
 |:-:|:-:|:-:|:-:|:-:|:-:|
+|GTX 3070| | |NO|441.0 MH/s| ~10s
 |GTX 1070 OC|1950|4450|NO|179.0 MH/s| ~24s
 |GTX 1070|1750|4000|NO|163.0 MH/s| ~26s
 |RX 480|1328|2000|YES|120.0 MH/s| ~36s
 |Apple Silicon M1<br/>(8-core GPU)|-|-|-|45.0 MH/s| ~97s
 |Apple Silicon M1 Max<br/>(32-core GPU)|-|-|-|172.0 MH/s| ~25s
+
