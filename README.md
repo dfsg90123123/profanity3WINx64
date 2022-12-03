@@ -139,7 +139,7 @@ usage: ./profanity3 [OPTIONS]
 - ```pacman -S base-devel gcc vim cmake```
 - cd /C/DOWNLOADS/profanity3-master
 - make
-- profanity2.exe
+- ./profanity3.exe
 
 ### Compile for Linux
 
@@ -148,8 +148,8 @@ usage: ./profanity3 [OPTIONS]
 - sudo apt-get install ocl-icd-opencl-dev intel-opencl-icd
 - make
 - make clean
-- chmod +x ./profanity.x64
-- ./profanity.x64
+- chmod +x ./profanity3.x64
+- ./profanity3.x64
 
 ### Benchmarks - Current version
 |Model|Clock Speed|Memory Speed|Modified straps|Speed|Time to match eight characters
