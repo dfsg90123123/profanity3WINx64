@@ -15,9 +15,9 @@
 #else
 #  include <CL/cl.h>
 #  include <CL/cl_ext.h> // Included to get topology to get an actual unique identifier per device
-#  if defined(CL_DEVICE_TOPOLOGY_AMD)
-#    include <hwloc/opencl.h> // Otherwise it won't certify as "Works On My Machine (TM)".
-#  endif
+//#  if defined(CL_DEVICE_TOPOLOGY_AMD)
+//#    include <hwloc/opencl.h> // Otherwise it won't certify as "Works On My Machine (TM)".
+//#  endif
 #endif
 
 #define CL_DEVICE_PCI_BUS_ID_NV  0x4008
