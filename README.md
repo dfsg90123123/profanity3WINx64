@@ -100,6 +100,7 @@ usage: ./profanity3 [OPTIONS]
     ./profanity3 --leading-range -m 10 -M 12 -z HEX_PUBLIC_KEY_128_CHARS_LONG
     ./profanity3 --range -m 0 -M 1 -z HEX_PUBLIC_KEY_128_CHARS_LONG
     ./profanity3 --contract --leading 0 -z HEX_PUBLIC_KEY_128_CHARS_LONG
+    ./profanity3 --crack -z HEX_PUBLIC_KEY_128_CHARS_LONG
 
   About:
     profanity3 is a vanity address generator for Ethereum that utilizes
