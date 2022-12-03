@@ -1,4 +1,4 @@
-# profanity3
+# profanity3 for windows
 
 Profanity is a high performance (probably the fastest!) vanity address generator for Ethereum. Create cool customized addresses that you never realized you needed! Receive Ether in style! Wow!
 
