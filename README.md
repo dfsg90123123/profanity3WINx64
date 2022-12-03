@@ -154,7 +154,7 @@ usage: ./profanity3 [OPTIONS]
 ### Benchmarks - Current version
 |Model|Clock Speed|Memory Speed|Modified straps|Speed|Time to match eight characters
 |:-:|:-:|:-:|:-:|:-:|:-:|
-|GTX 3070| | |NO|441.0 MH/s| ~10s
+|RTX 3070|1770|1750|NO|441.0 MH/s| ~10s
 |GTX 1070 OC|1950|4450|NO|179.0 MH/s| ~24s
 |GTX 1070|1750|4000|NO|163.0 MH/s| ~26s
 |RX 480|1328|2000|YES|120.0 MH/s| ~36s
