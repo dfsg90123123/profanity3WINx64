@@ -20,23 +20,20 @@ The "profanity2" project is not generating keys anymore (as opposed to "profanit
 
 
 
-## -------
-# Generate private and public key
+### Generate private and public key
 ```openssl ecparam -name secp256k1 -genkey -noout | openssl ec -text -noout > key.txt```
 
-# Extract public key and remove EC prefix 0x04
+### Extract public key and remove EC prefix 0x04
 ```cat key.txt | grep pub -A 5 | tail -n +2 | tr -d '\n[:space:]:' | sed 's/^04//' > publickey.txt```
 
-# public key for mandatory `-z` parameter
+### public key for mandatory `-z` parameter
 ```cat key.txt```
 
-# Extract the private key and remove the leading zero byte
+### Extract the private key and remove the leading zero byte
 cat key.txt | grep privatekey.txt -A 3 | tail -n +2 | tr -d '\n[:space:]:' | sed 's/^00//' > privatekey.txt
 
-# Generate the hash and take the address part
+### Generate the hash and take the address part
 cat publickey.txt | keccak-256sum -x -l | tr -d ' -' | tail -c 41 > address.txt
-
-## -------
 
 
 
