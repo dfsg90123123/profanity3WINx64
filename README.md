@@ -170,18 +170,33 @@ $ ./profanity3.x64 -z fa0917848a5d3840844b679e72665a4861efdc3e06894e8a9cf5e07089
 - ```pacman -S mingw-w64-x86_64-toolchain mingw-w64-x86_64-opencl-headers```
 - ```pacman -S base-devel gcc vim cmake```
 - ```pacman -S mingw-w64-x86_64-bc```
-- cd /C/DOWNLOADS/profanity3-master
+- cd /C/VANITY/profanity3WINx64
 - make -f Makefile.WIN
 - ./profanity3.exe
 
-### Compile for Linux
+### Compile for Windows-Subsystem for Linux
+
+- start windows powershell as administrator
+- ```wsl --install Ubuntu-20.04```
+- cd /mnt/c/VANITY/profanity3WINx64
+- ```sudo apt-get update && sudo apt-get upgrade```
+- ```sudo apt-get install make g++ dkms```
+- ```sudo apt-get install opencl-headers ocl-icd-opencl-dev intel-opencl-icd```
+- ```make -f Makefile.LINUX clean```
+- ```make -f Makefile.LINUX```
+- ./profanity3.x64
+- install cuda for subsystem
+- wget https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda_11.8.0_520.61.05_linux.run
+- sudo sh cuda_11.8.0_520.61.05_linux.run
+
+### Compile for Linux (in Github Codespaces)
 
 - sudo apt-get update && sudo apt-get upgrade
 - sudo apt-get install opencl-headers ocl-icd-opencl-dev intel-opencl-icd
 - make -f Makefile.LINUX clean
 - make -f Makefile.LINUX
 - ./profanity3.x64
-- ```
+
 
 ### Benchmarks - Current version
 |Model|Clock Speed|Memory Speed|Modified straps|Speed|Time to match eight characters
