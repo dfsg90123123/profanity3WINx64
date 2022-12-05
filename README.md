@@ -159,6 +159,7 @@ usage: ./profanity3 [OPTIONS]
 - Open MSYS2 MINIGW64 shell
 - ```pacman -S mingw-w64-x86_64-toolchain mingw-w64-x86_64-opencl-headers```
 - ```pacman -S base-devel gcc vim cmake```
+- ```pacman -S mingw-w64-x86_64-bc```
 - cd /C/DOWNLOADS/profanity3-master
 - make
 - ./profanity3.exe
@@ -185,20 +186,21 @@ usage: ./profanity3 [OPTIONS]
 
 ### 50% probability to find a collision
 ```
-  rate = 400 MHases / sec = 400 Mio. Hashes / sec
+  rate = 400 MHashes / sec = 400'000'000 Hashes / sec
   permutations = 16 ^ (prefixlength + postfixlength)
   prob50% = log(0.5) / log(1 - 1 / permutations)
   timeTo50% = prob50% / rate
 ```
 
 ```log(0.5)/log(1-1/16^12)/400000000/60/60/24 (days)```
-```https://keisan.casio.com/calculator```
+
+https://keisan.casio.com/calculator
 
 ```
-GPU RTX3070 -> Rate = 440'000'000 H/s -> 50% probability:
-7 chars -> 0.5 sec
-8 chars -> 7 sec
-9 chars -> 108 sec
+GPU RTX 3070 -> Rate = 440 MH/s -> 50% probability:
+ 7 chars -> 0.5 sec
+ 8 chars -> 7 sec
+ 9 chars -> 108 sec
 10 chars -> 28 min
 11 chars -> 7.7 h
 12 chars -> 5 days
