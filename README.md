@@ -19,6 +19,7 @@ The good guys at 1inch created a follow-up project called "profanity2" which was
 The "profanity2" project is not generating keys anymore (as opposed to "profanity1"). Instead, it adjusts a user-provided public key until a desired vanity address is discovered. Users provide a seed public key in the form of a 128-symbol hex string with the `-z` parameter flag. The resulting private key should then be added to the seed private key to achieve a final private key with the desired vanity address (remember: private keys are just 256-bit numbers). Running "profanity2" can even be outsourced to someone completely unreliable - it is still safe by design.
 
 
+## Create keys from terminal 
 
 ### Generate private and public key
 ```openssl ecparam -name secp256k1 -genkey -noout | openssl ec -text -noout > key.txt```
@@ -30,10 +31,10 @@ The "profanity2" project is not generating keys anymore (as opposed to "profanit
 ```cat key.txt```
 
 ### Extract the private key and remove the leading zero byte
-cat key.txt | grep privatekey.txt -A 3 | tail -n +2 | tr -d '\n[:space:]:' | sed 's/^00//' > privatekey.txt
+```cat key.txt | grep privatekey.txt -A 3 | tail -n +2 | tr -d '\n[:space:]:' | sed 's/^00//' > privatekey.txt```
 
 ### Generate the hash and take the address part
-cat publickey.txt | keccak-256sum -x -l | tr -d ' -' | tail -c 41 > address.txt
+```cat publickey.txt | keccak-256sum -x -l | tr -d ' -' | tail -c 41 > address.txt```
 
 
 
@@ -182,3 +183,27 @@ usage: ./profanity3 [OPTIONS]
 |Apple Silicon M1<br/>(8-core GPU)|-|-|-|45.0 MH/s| ~97s
 |Apple Silicon M1 Max<br/>(32-core GPU)|-|-|-|172.0 MH/s| ~25s
 
+### 50% probability to find a collision
+```
+  rate = 400 MHases / sec = 400 Mio. Hashes / sec
+  permutations = 16 ^ (prefixlength + postfixlength)
+  prob50% = log(0.5) / log(1 - 1 / permutations)
+  timeTo50% = prob50% / rate
+```
+
+```log(0.5)/log(1-1/16^12)/400000000/60/60/24 (days)```
+```https://keisan.casio.com/calculator```
+
+```
+GPU RTX3070 -> Rate = 440'000'000 H/s -> 50% probability:
+7 chars -> 0.5 sec
+8 chars -> 7 sec
+9 chars -> 108 sec
+10 chars -> 28 min
+11 chars -> 7.7 h
+12 chars -> 5 days
+13 chars -> 82 days
+14 chars -> 3.6 years
+15 chars -> 56 years
+16 chars -> 921 years
+```
