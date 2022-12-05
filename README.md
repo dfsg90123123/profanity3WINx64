@@ -153,26 +153,35 @@ usage: ./profanity3 [OPTIONS]
       corners to improve overall performance.
 ```
 
+## Example
+```bash
+$
+$ openssl ecparam -genkey -name secp256k1 -text -noout -outform DER | xxd -p -c 1000 | sed 's/41534e31204f49443a20736563703235366b310a30740201010420/Private Key: /' | sed 's/a00706052b8104000aa144034200/\'$'\nPublic Key: /'
+Private Key: 8075e76359606d577ec686aa5897198f8dfcb090bdfd6b705e54f982529a2ccb
+Public Key: 04fa0917848a5d3840844b679e72665a4861efdc3e06894e8a9cf5e070899b024d6b178b23caedf9aecea9d06525d82b0cff597f8c1cd93f317c848cd21b45e91c
+$
+$ ./profanity3.x64 -z fa0917848a5d3840844b679e72665a4861efdc3e06894e8a9cf5e070899b024d6b178b23caedf9aecea9d06525d82b0cff597f8c1cd93f317c848cd21b45e91c --matching 000XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX000
+```
+
 ### Compile for Windows
 
 - Install MSYS2
-- Open MSYS2 MINIGW64 shell
+- Open MSYS2 (MINIGW64) shell (do not try other versions)
 - ```pacman -S mingw-w64-x86_64-toolchain mingw-w64-x86_64-opencl-headers```
 - ```pacman -S base-devel gcc vim cmake```
 - ```pacman -S mingw-w64-x86_64-bc```
 - cd /C/DOWNLOADS/profanity3-master
-- make
+- make -f Makefile.WIN
 - ./profanity3.exe
 
 ### Compile for Linux
 
 - sudo apt-get update && sudo apt-get upgrade
-- sudo apt-get install opencl-headers
-- sudo apt-get install ocl-icd-opencl-dev intel-opencl-icd
-- make
-- make clean
-- chmod +x ./profanity3.x64
+- sudo apt-get install opencl-headers ocl-icd-opencl-dev intel-opencl-icd
+- make -f Makefile.LINUX clean
+- make -f Makefile.LINUX
 - ./profanity3.x64
+- ```
 
 ### Benchmarks - Current version
 |Model|Clock Speed|Memory Speed|Modified straps|Speed|Time to match eight characters
