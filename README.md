@@ -155,15 +155,26 @@ usage: ./profanity3 [OPTIONS]
 
 ## Example
 ```bash
-$
+STEP 1:
 $ openssl ecparam -genkey -name secp256k1 -text -noout -outform DER | xxd -p -c 1000 | sed 's/41534e31204f49443a20736563703235366b310a30740201010420/Private Key: /' | sed 's/a00706052b8104000aa144034200/\'$'\nPublic Key: /'
-Private Key: 8075e76359606d577ec686aa5897198f8dfcb090bdfd6b705e54f982529a2ccb
-Public Key: 04fa0917848a5d3840844b679e72665a4861efdc3e06894e8a9cf5e070899b024d6b178b23caedf9aecea9d06525d82b0cff597f8c1cd93f317c848cd21b45e91c
-$
-$ ./profanity3.x64 -z fa0917848a5d3840844b679e72665a4861efdc3e06894e8a9cf5e070899b024d6b178b23caedf9aecea9d06525d82b0cff597f8c1cd93f317c848cd21b45e91c --matching 000XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX000
+> Private Key: 8825e602379969a2e97297601eccf47285f8dd4fedfae2d1684452415623dac3
+> Public Key: 04e9507a57c01e9e18a929366813909bbc14b2d702a46c056df77465774d449e48b9f9c2279bb9a5996d2bd2c9f5c9470727f7f69c11f7eeee50efeaf97107a09c
+
+STEP 2:
+$ ./profanity3.exe -z e9507a57c01e9e18a929366813909bbc14b2d702a46c056df77465774d449e48b9f9c2279bb9a5996d2bd2c9f5c9470727f7f69c11f7eeee50efeaf97107a09c --matching 888888XXXXXXXXXXXXXXXXXXXXXXXXXXXX888888
+> Time: 255s Score: 5 Private: 0x00004ef54fa692de2b8a0c6ee30b63f96cf8b785ca21a373b400ea2b0b2facaf Address: 0x8888c2664dcabec06ba8b89660b6f40fbf888888
+
+STEP 3:
+PRIVATE_KEY_A=8825e602379969a2e97297601eccf47285f8dd4fedfae2d1684452415623dac3
+PRIVATE_KEY_B=00004ef54fa692de2b8a0c6ee30b63f96cf8b785ca21a373b400ea2b0b2facaf
+
+$ (echo 'ibase=16;obase=10' && (echo '(8825e602379969a2e97297601eccf47285f8dd4fedfae2d1684452415623dac3 + 00004ef54fa692de2b8a0c6ee30b63f96cf8b785ca21a373b400ea2b0b2facaf) % FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFC2F' | tr '[:lower:]' '[:upper:]')) | bc
+> 882634F7873FFC8114FCA3CF01D8586BF2F194D5B81C86451C453C6C61538772
+
+PRIVATE_KEY_FINAL=0x882634F7873FFC8114FCA3CF01D8586BF2F194D5B81C86451C453C6C61538772
 ```
 
-### Compile for Windows
+## Compile for Windows
 
 - Install MSYS2
 - Open MSYS2 (MINIGW64) shell (do not try other versions)
@@ -174,7 +185,15 @@ $ ./profanity3.x64 -z fa0917848a5d3840844b679e72665a4861efdc3e06894e8a9cf5e07089
 - make -f Makefile.WIN
 - ./profanity3.exe
 
-### Compile for Windows-Subsystem for Linux
+## Compile for Linux (in Github Codespaces)
+
+- sudo apt-get update && sudo apt-get upgrade
+- sudo apt-get install opencl-headers ocl-icd-opencl-dev intel-opencl-icd
+- make -f Makefile.LINUX clean
+- make -f Makefile.LINUX
+- ./profanity3.x64
+
+## Compile for Windows-Subsystem for Linux
 
 - start windows powershell as administrator
 - ```wsl --install Ubuntu-20.04```
@@ -189,16 +208,7 @@ $ ./profanity3.x64 -z fa0917848a5d3840844b679e72665a4861efdc3e06894e8a9cf5e07089
 - wget https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda_11.8.0_520.61.05_linux.run
 - sudo sh cuda_11.8.0_520.61.05_linux.run
 
-### Compile for Linux (in Github Codespaces)
-
-- sudo apt-get update && sudo apt-get upgrade
-- sudo apt-get install opencl-headers ocl-icd-opencl-dev intel-opencl-icd
-- make -f Makefile.LINUX clean
-- make -f Makefile.LINUX
-- ./profanity3.x64
-
-
-### Benchmarks - Current version
+## Benchmarks - Current version
 |Model|Clock Speed|Memory Speed|Modified straps|Speed|Time to match eight characters
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |RTX 3070|1770|1750|NO|441.0 MH/s| ~10s
