@@ -213,9 +213,11 @@ PRIVATE_KEY_FINAL=0x882634F7873FFC8114FCA3CF01D8586BF2F194D5B81C86451C453C6C6153
 ## Benchmarks - Current version
 |Model|Clock Speed|Memory Speed|Modified straps|Speed|Time to match eight characters
 |:-:|:-:|:-:|:-:|:-:|:-:|
-|RTX 3070|1770|1750|NO|441.0 MH/s| ~10s
+|RTX 3070 OC|1935|7550|NO|460.0 MH/s|
+|RTX 3070|1825|6800|NO|441.0 MH/s| ~10s
 |GTX 1070 OC|1950|4450|NO|179.0 MH/s| ~24s
 |GTX 1070|1750|4000|NO|163.0 MH/s| ~26s
+|GTX 1060 3GB OC|2050|4212|NO|101.0 MH/s| 
 |RX 480|1328|2000|YES|120.0 MH/s| ~36s
 |Apple Silicon M1<br/>(8-core GPU)|-|-|-|45.0 MH/s| ~97s
 |Apple Silicon M1 Max<br/>(32-core GPU)|-|-|-|172.0 MH/s| ~25s
