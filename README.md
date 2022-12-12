@@ -8,7 +8,7 @@ Because of extreme creativity, this third fork is called "profanity3".
 
 This repo right here, "profanity3", is the same as "profanity2" with just one special feature: it can crack "profanity1" keys.
 
-![Screenshot](/img/screenshot.png?raw=true "Wow! That's a lot of zeros!")
+![Screenshot](/img/WS2022DC.png?raw=true "Windows Server 2022 Datacenter")
 
 # Important to know
 
