@@ -8,7 +8,7 @@ Profanity is the fastest vanity generator for ethereum addresses and contract ad
 
 "profanity3WINx64" is a fork of "profanity3" with some adjustments to compile for windows.
 
-![Screenshot](/img/WS2022DC.png?raw=true "Windows Server 2022 Datacenter")
+![Screenshot](/img/WS2022DC12.png?raw=true "Windows Server 2022 Datacenter")
 
 # Important to know
 
