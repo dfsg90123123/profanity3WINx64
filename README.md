@@ -219,10 +219,14 @@ PRIVATE_KEY=0x882634F7873FFC8114FCA3CF01D8586BF2F194D5B81C86451C453C6C61538772
 GPU0: NVIDIA GeForce RTX 3070, 8589279232 bytes available, 46 compute units (precompiled = no)
 tweak raise RTX3700 from 441 MH/s to 462 MH/s
 
-GPU0: NVIDIA GeForce RTX 3070 OC, Core-Clock: +170; Memory-Clock: +845
+GPU0: NVIDIA GeForce RTX 3070 OC WC, Core-Clock: +170; Memory-Clock: +845
+tweak raise RTX3700 OC from 470 MH/s to 497 MH/s
+
+GPU0: NVIDIA GeForce RTX 3070 OC WC, Core-Clock: 1850+191; Memory-Clock: 6800+999
 tweak raise RTX3700 OC from 470 MH/s to 497 MH/s
 ```
 
+![Screenshot](/img/WS2022DC12OC501.png?raw=true "RTX3070OC")
 
 ### 50% probability to find a collision
 ```
