@@ -170,6 +170,9 @@ PRIVATE_KEY=0x882634F7873FFC8114FCA3CF01D8586BF2F194D5B81C86451C453C6C61538772
 - >choco install OpenSSL.Light
 - restart PowerShell
 
+## Install xxd for Windows
+- https://sourceforge.net/projects/xxd-for-windows/
+
 ## Compile for Windows
 
 - Install MSYS2
