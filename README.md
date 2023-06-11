@@ -20,7 +20,7 @@ The "profanity2" project is not generating keys anymore (as opposed to "profanit
 
 ## Getting public key for mandatory `-z` parameter
 
-Generate private key and public key via openssl in terminal (remove prefix "04" from public key):
+Generate private key and public key via openssl in MSYS2-terminal (remove prefix "04" from public key):
 ```bash
 $ openssl ecparam -genkey -name secp256k1 -text -noout -outform DER | xxd -p -c 1000 | sed 's/41534e31204f49443a20736563703235366b310a30740201010420/Private Key: /' | sed 's/a00706052b8104000aa144034200/\'$'\nPublic Key: /'
 ```
@@ -170,8 +170,8 @@ PRIVATE_KEY=0x882634F7873FFC8114FCA3CF01D8586BF2F194D5B81C86451C453C6C61538772
 - >choco install OpenSSL.Light
 - restart PowerShell
 
-## Install xxd for Windows
-- https://sourceforge.net/projects/xxd-for-windows/
+## Install xxd in MSYS2-terminal
+- pacman -S vim
 
 ## Compile for Windows
 
