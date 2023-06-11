@@ -165,6 +165,11 @@ PRIVATE_KEY=0x882634F7873FFC8114FCA3CF01D8586BF2F194D5B81C86451C453C6C61538772
 
 ![Screenshot](/img/WIN11PRO.png?raw=true "Windows 11")
 
+## Install openssl for Windows
+- open PowerShell
+- >choco install OpenSSL.Light
+- restart PowerShell
+
 ## Compile for Windows
 
 - Install MSYS2
