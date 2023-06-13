@@ -173,6 +173,9 @@ PRIVATE_KEY=0x882634F7873FFC8114FCA3CF01D8586BF2F194D5B81C86451C453C6C61538772
 ## Install xxd in MSYS2-terminal
 - pacman -S vim
 
+## Install bc in MSYS2-terminal
+- pacman -S bc
+
 ## Compile for Windows
 
 - Install MSYS2
