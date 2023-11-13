@@ -94,12 +94,19 @@ static void printResult(cl_ulong4 seed, cl_ulong round, result r, cl_uchar score
 	// Format public key
 	const std::string strPublic = toHex(r.foundHash, 20);
 
-	// Print
+	// Print to screen
 	const std::string strVT100ClearLine = "\33[2K\r";
 	std::cout << strVT100ClearLine << "  Time: " << std::setw(5) << seconds << "s Score: " << std::setw(2) << (int) score << " Private: 0x" << strPrivate << ' ';
 
 	std::cout << mode.transformName();
 	std::cout << ": 0x" << strPublic << std::endl;
+
+	// print to file
+	std::ofstream outFile("output.txt", std::ios::app);
+	outFile << "Time: " << std::setw(5) << seconds << "s Score: " << std::setw(2) << (int) score << " Private: 0x" << strPrivate << ' ';
+	outFile << mode.transformName();
+	outFile << ": 0x" << strPublic << std::endl;
+	outFile.close();
 }
 
 unsigned int getKernelExecutionTimeMicros(cl_event & e) {
