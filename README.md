@@ -12,7 +12,7 @@ Profanity is the fastest vanity generator for ethereum addresses and contract ad
 
 # Important to know
 
-A previous version of this project (hereby called "profanity1" for context) has a known critical issue due to a bad source of randomness. The issue enables attackers to recover the private key given a public key: https://blog.1inch.io/a-vulnerability-disclosed-in-profanity-an-ethereum-vanity-address-tool-68ed7455fc8c
+A previous version of this project (hereby called "profanity1" for context) has a known critical issue due to a bad source of randomness. The issue enables attackers to recover the private key given a public key: https://blog.1inch.io/a-vulnerability-disclosed-in-profanity-an-ethereum-vanity-address-tool/
 
 The good guys at 1inch created a follow-up project called "profanity2" which was forked from the original "profanity1" project and modified to guarantee **safety by design**. They claim that "this means that the source code of this project does not require any audits, but still guarantee safe usage." Kind of a bold statement (if you ask me) although it's pretty much true.
 
@@ -215,17 +215,18 @@ PRIVATE_KEY=0x882634F7873FFC8114FCA3CF01D8586BF2F194D5B81C86451C453C6C61538772
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |RTX 3070 OC|1850+191|6800+999|-I 64384 -w 64384 -i 512|501.0 MH/s|
 |RTX 3070 OC|2010|7550|NO|470.0 MH/s|
-|RTX 3070|1850|6800|NO|441.0 MH/s| ~10s
-|GTX 1070 OC|1950|4450|NO|179.0 MH/s| ~24s
-|GTX 1070|1750|4000|NO|163.0 MH/s| ~26s
+|RTX 3070|1850|6800|NO|441.0 MH/s| ~10s|
+|GTX 1070 OC|1950|4450|NO|179.0 MH/s| ~24s|
+|GTX 1070|1750|4000|NO|163.0 MH/s| ~26s|
+|GTX 1650 4GB notebook|1785|6120|-I 64384 -w 64384 -i 512|123.5 MH/s|
 |GTX 1060 3GB OC|2050|4212|NO|101.0 MH/s| 
-|RX 480|1328|2000|YES|120.0 MH/s| ~36s
-|Apple Silicon M1<br/>(8-core GPU)|-|-|-|45.0 MH/s| ~97s
-|Apple Silicon M1 Max<br/>(32-core GPU)|-|-|-|172.0 MH/s| ~25s
+|RX 480|1328|2000|YES|120.0 MH/s| ~36s|
+|Apple Silicon M1<br/>(8-core GPU)|-|-|-|45.0 MH/s| ~97s|
+|Apple Silicon M1 Max<br/>(32-core GPU)|-|-|-|172.0 MH/s| ~25s|
 
 ## Tweaks
 ```bash
-.\profanity3 -I 64384 -w 64384 -i 512 -z e9507a57c01e9e18a929366813909bbc14b2d702a46c056df77465774d449e48b9f9c2279bb9a5996d2bd2c9f5c9470727f7f69c11f7eeee50efeaf97107a09c --leading-doubles 
+./profanity3 -I 64384 -w 64384 -i 512 -z e9507a57c01e9e18a929366813909bbc14b2d702a46c056df77465774d449e48b9f9c2279bb9a5996d2bd2c9f5c9470727f7f69c11f7eeee50efeaf97107a09c --leading-doubles 
 
 GPU0: NVIDIA GeForce RTX 3070, 8589279232 bytes available, 46 compute units (precompiled = no)
 tweak raise RTX3700 from 441 MH/s to 462 MH/s
@@ -247,7 +248,7 @@ tweak raise RTX3700 OC from 470 MH/s to 497 MH/s
   timeTo50% = prob50% / rate
 ```
 
-https://keisan.casio.com/calculator
+https://keisan.casio.jp/calculator
 
 ```log(0.5)/log(1-1/16^12)/440000000/60/60/24 (days)```
 
