@@ -225,7 +225,7 @@ PRIVATE_KEY=0x882634F7873FFC8114FCA3CF01D8586BF2F194D5B81C86451C453C6C61538772
 
 ## Tweaks
 ```bash
-.\profanity3 -I 64384 -w 64384 -i 512 -z e9507a57c01e9e18a929366813909bbc14b2d702a46c056df77465774d449e48b9f9c2279bb9a5996d2bd2c9f5c9470727f7f69c11f7eeee50efeaf97107a09c --leading-doubles 
+./profanity3 -I 64384 -w 64384 -i 512 -z e9507a57c01e9e18a929366813909bbc14b2d702a46c056df77465774d449e48b9f9c2279bb9a5996d2bd2c9f5c9470727f7f69c11f7eeee50efeaf97107a09c --leading-doubles 
 
 GPU0: NVIDIA GeForce RTX 3070, 8589279232 bytes available, 46 compute units (precompiled = no)
 tweak raise RTX3700 from 441 MH/s to 462 MH/s
@@ -247,7 +247,7 @@ tweak raise RTX3700 OC from 470 MH/s to 497 MH/s
   timeTo50% = prob50% / rate
 ```
 
-https://keisan.casio.com/calculator
+https://keisan.casio.jp/calculator
 
 ```log(0.5)/log(1-1/16^12)/440000000/60/60/24 (days)```
 
