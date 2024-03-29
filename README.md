@@ -213,6 +213,7 @@ PRIVATE_KEY=0x882634F7873FFC8114FCA3CF01D8586BF2F194D5B81C86451C453C6C61538772
 ## Benchmarks - Current version
 |Model|Clock Speed|Memory Speed|Modified straps|Speed|Time to match eight characters
 |:-:|:-:|:-:|:-:|:-:|:-:|
+|RTX 4070Ti OC|-|-|NO|670.0 MH/s|
 |RTX 3070 OC|1850+191|6800+999|-I 64384 -w 64384 -i 512|501.0 MH/s|
 |RTX 3070 OC|2010|7550|NO|470.0 MH/s|
 |RTX 3070|1850|6800|NO|441.0 MH/s| ~10s|
